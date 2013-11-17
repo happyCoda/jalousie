@@ -1,8 +1,8 @@
 /*
-* PurrJS JavaScript library. 
+* jalousie JavaScript plugin. 
 * (c) 2013, happyCoda. 
 * MIT License. 
-* https://github.com/happyCoda/purrjs
+* https://github.com/happyCoda/jalousie
 */
 
 window.onload = function () {
