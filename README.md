@@ -42,5 +42,6 @@ Set this option to true if you want your jalousied element to disappear after an
 
 ## Release History
 * 2017-02-08   v1.0.0   Version 1.0.0 release.
+* 2017-02-07   v1.0.0   Version 1.0.0 release.
 * 2017-02-07   v0.2.0   Logic rewritten.
 * 2013-08-02   v0.1.0   First release.
