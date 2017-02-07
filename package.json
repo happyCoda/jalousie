@@ -1,10 +1,10 @@
 {
   "name": "jQuery jalousie plugin",
-  "version": "1.0.0",
-  "description": "jQuerh, JavaScript, plugins",
+  "version": "0.2.0",
+  "description": "jQuery, JavaScript, plugins",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp dev"
   },
   "keywords": [
     "jquery",
