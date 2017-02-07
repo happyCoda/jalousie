@@ -5,6 +5,7 @@ let gulp = require('gulp'),
   browserify = require('browserify'),
   babelify = require('babelify'),
   watchify = require('watchify'),
+  uglifyify = require('uglifyify'),
   buffer = require('vinyl-buffer'),
   source = require('vinyl-source-stream'),
   browsersync = require('browser-sync');
@@ -20,7 +21,7 @@ gulp.task('css', () => {
   gulp.watch([src], () => {
     gulp.src(src)
       .pipe(less())
-      .pipe(rename('bundle.css'))
+      .pipe(rename('jquery.jalousie.css'))
       .pipe(gulp.dest(dest))
       .on('end', () => {
         let finishBundle = Date.now();
@@ -40,6 +41,9 @@ gulp.task('bundle', () => {
   .transform(babelify, {
       presets: ['es2015']
   })
+  .transform(uglifyify, {
+    global: true
+  })
   .on('update', bundle);
 
   bundle();
@@ -57,7 +61,7 @@ gulp.task('bundle', () => {
       util.log(`Bundle finished in ${util.colors.green((finishBundle - startBundle) + ' ms')}`);
     })
     .pipe(source('app.js'))
-    .pipe(rename('bundle.js'))
+    .pipe(rename('jquery.jalousie.min.js'))
     .pipe(gulp.dest(BUILD_PATH));
   }
 });

@@ -16,10 +16,31 @@ git clone https://github.com/happyCoda/jquery.jalousie.git
 $(selector).jalousie({
   shutterNum: 5,
   shutterBgColor: 'rgb(14, 37, 140)',
-  duration: 1000
+  duration: 1000,
+  hide: true
 });
 ```
 
+### Options
+
+#### shutterNum
+
+Defines the number of shutters to create jalousie effect.
+
+#### shutterBgColor
+
+Color of shutter background.
+
+#### duration
+
+Animation duration in milliseconds.
+
+#### hide
+
+Set this option to true if you want your jalousied element to disappear after animation.
+
+
 ## Release History
+* 2017-02-08   v1.0.0   Version 1.0.0 release.
 * 2017-02-07   v0.2.0   Logic rewritten.
 * 2013-08-02   v0.1.0   First release.

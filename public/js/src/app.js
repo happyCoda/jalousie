@@ -5,15 +5,14 @@
 * https://github.com/happyCoda/jalousie
 */
 
-import $ from 'jquery';
-
 $.fn.jalousie = function (params) {
   let docFrag = document.createDocumentFragment(),
     	$div,
       shutterNum = params.shutterNum || 10,
     	$img = this.find('img'),
     	imgWidth = $img.width(),
-    	imgHeight = $img.height();
+    	imgHeight = $img.height(),
+      $shutters;
 
     this.css({
       position: 'relative'
@@ -35,11 +34,17 @@ $.fn.jalousie = function (params) {
 
   	this.append($(docFrag));
 
-  	$('.shutter').animate({width: (Math.ceil(imgWidth / shutterNum)) + 'px'}, params.duration || 3000);
-}
+  	$shutters = $('.shutter');
 
-$('.container').jalousie({
-  shutterNum: 5,
-  shutterBgColor: 'rgb(14, 37, 140)',
-  duration: 1000
-});
+    function runAnimation() {
+      return $shutters.animate({width: (Math.ceil(imgWidth / shutterNum)) + 'px'}, params.duration || 3000);
+    }
+
+    function hideElements() {
+      if (params.hide) {
+        $img.add($shutters).hide();
+      }
+    }
+
+    $.when(runAnimation()).then(hideElements);
+};
