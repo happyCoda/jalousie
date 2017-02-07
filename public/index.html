@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jalousie jquery plugin</title>
+		<link rel="stylesheet" href="/css/dest/jquery.jalousie.css">
+	</head>
+	<body>
+		<div class="container">
+			<img src="i/prague.jpeg" alt="prague">
+		</div>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/dest/jquery.jalousie.min.js"></script>
+    <script>
+      $('.container').jalousie({
+        shutterNum: 5,
+        shutterBgColor: 'rgb(255, 255, 255)',
+        duration: 1000,
+        hide: true
+      });
+    </script>
+	</body>
+</html>
